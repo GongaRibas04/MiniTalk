@@ -6,7 +6,7 @@
 /*   By: gobarbos <gobarbos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:06:44 by gobarbos          #+#    #+#             */
-/*   Updated: 2023/03/23 15:16:33 by gobarbos         ###   ########.fr       */
+/*   Updated: 2023/03/27 09:25:40 by gobarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ static void encoder(int pid, const char *str){
     i = 0;
     while (*str){
         j = 7;
-        while(j <= 0){
-            if (str[i] && )
-
+        while(j >= 0){
+            if (str[i] & (1 << j--))
+                if(kill(pid, SIGUSR1) == -1)
+                    ft_exit_error("Enable to send SIGUSR1");
+            else
+                if(kill(pid, SIGUSR2) == -1)
+                    ft_exit_error("Enable to send SIGUSR2");
         }
     }
-
-
-
 }
 
 int main(int argc, char const *argv[]){

@@ -6,13 +6,15 @@
 /*   By: gobarbos <gobarbos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:12:39 by gobarbos          #+#    #+#             */
-/*   Updated: 2022/11/18 10:47:59 by gobarbos         ###   ########.fr       */
+/*   Updated: 2023/03/23 15:59:19 by gobarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "get_next_line/get_next_line.h"
+# include "ft_printf/ft_printf.h"
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
