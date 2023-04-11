@@ -17,16 +17,20 @@ static void encoder(int pid, const char *str){
     int j;
 
     i = 0;
-    while (*str){
+    while (str[i]){
         j = 7;
         while(j >= 0){
-            if (str[i] & (1 << j--))
+            if (str[i] & (1 << j--)){
                 if(kill(pid, SIGUSR1) == -1)
                     ft_exit_error("Enable to send SIGUSR1");
-            else
+            }
+            else{
                 if(kill(pid, SIGUSR2) == -1)
                     ft_exit_error("Enable to send SIGUSR2");
+            }
+            usleep(50);
         }
+        i++;
     }
 }
 
@@ -36,11 +40,11 @@ int main(int argc, char const *argv[]){
     int         i;
 
     if (argc != 3)
-        ft_exit_error("Invalid number of arguments!")
+        ft_exit_error("Invalid number of arguments!");
     
     i = 0;
     while(argv[1][i]){
-        if(!is_digit(argv[1][i++]))
+        if(!ft_isdigit(argv[1][i++]))
             ft_exit_error("Invalid PID");
     }
 
@@ -48,5 +52,5 @@ int main(int argc, char const *argv[]){
     encoder(pid, argv[2]);
     encoder(pid,"\n");
 
-    return(EXIT_SUCESS);
+    return(EXIT_SUCCESS);
 }

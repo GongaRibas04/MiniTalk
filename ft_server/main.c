@@ -18,23 +18,19 @@ static int  decoder(char *str){
     int rslt;
 
     i = 0;
-    result = 0;
+    rslt = 0;
     while (str[i]){
         rslt <<= 1;
         if (str[i] == '1')
-            result++;
+            rslt += 1;
         i++;
     }
     return rslt;
 }
 
-static void handler(int signal, siginfo_t *info, void *cont){
+static void handler(int signal){
     static int  i;
     static char  *c;
-
-
-    (void)cont;
-    (void)info;
 
     if (!c)
         c = (char*)malloc(sizeof(char) * 8);
@@ -44,8 +40,11 @@ static void handler(int signal, siginfo_t *info, void *cont){
         c[i] = '1';
     else
         c[i] = '0';
-    if (++i == 8)
-        ft_printf("%c", decoder(c))
+    if (++i == 8){
+        ft_printf("%c", decoder(c));
+        c = 0;
+        i = 0;
+    }
 }
 
 int main(void){
@@ -55,7 +54,11 @@ int main(void){
     pid = getpid();
     ft_printf("Server PID: %d\n", pid);
     while(1){
-        sa.sa_sigaction = &handler;
+        sa.sa_handler = &handler;
         sa.sa_flags = SA_SIGINFO;
+        if (sigaction(SIGUSR1, &sa, NULL) == -1)
+            ft_exit_error("Couldn't chande SIGUSR1.");
+        if (sigaction(SIGUSR2, &sa, NULL) == -1)
+            ft_exit_error("Couldn't chande SIGUSR2.");   
     }
 }

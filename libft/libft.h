@@ -48,6 +48,7 @@ size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t n);
 
+void    ft_exit_error(char *str);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_bzero(void *s, size_t n);
 void	ft_putchar_fd(char c, int fd);

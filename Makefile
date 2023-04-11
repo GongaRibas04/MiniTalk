@@ -27,25 +27,25 @@ CC=cc
 
 CFLAGS=-Wall -Wextra -Werror
 
-LIBFTPATH = ./libft/
-
-LIBFT = libft.a 
+LIBFT = ./libft/libft.a  
 
 all: $(NAME1) $(NAME2)
 
-$(NAME1): $(OBJS_CLIENT)
-		make -C $(LIBFTPATH)
-		$(CC) $(CFLAGS) $(OBJS_CLIENT) $(LIBFTPATH)$(LIBFT) -o $(NAME1)
+$(LIBFT):
+		$(MAKE)-C ./libft
 
-$(NAME2): $(OBJS_SERVER)
-		make -C $(LIBFTPATH)
-		$(CC) $(CFLAGS) $(OBJS_SERVER) $(LIBFTPATH)$(LIBFT) -o $(NAME2)
+$(NAME1): $(OBJS_CLIENT) $(LIBFT)
+		$(CC) $(CFLAGS) $(OBJS_CLIENT) $(LIBFT) -o $(NAME1)
+
+$(NAME2): $(OBJS_SERVER) $(LIBFT)
+		$(CC) $(CFLAGS) $(OBJS_SERVER) $(LIBFT) -o $(NAME2)
 
 clean:
+	$(MAKE) clean -C ./libft
 	rm -rf $(OBJS_CLIENT) $(OBJS_SERVER)
-	cd libft && $(MAKE) clean
 
 fclean:	clean
+	$(MAKE) fclean -C ./libft
 	rm -f $(LIBFTPATH)$(LIBFT) $(NAME1) $(NAME2)
 
 re:	fclean all
