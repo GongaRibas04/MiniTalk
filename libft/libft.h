@@ -6,7 +6,7 @@
 /*   By: gobarbos <gobarbos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 15:12:39 by gobarbos          #+#    #+#             */
-/*   Updated: 2023/03/23 15:59:19 by gobarbos         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:31:47 by gobarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t n);
 
-void    ft_exit_error(char *str);
+void	ft_exit_error(char *str);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_bzero(void *s, size_t n);
 void	ft_putchar_fd(char c, int fd);

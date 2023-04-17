@@ -6,13 +6,14 @@
 /*   By: gobarbos <gobarbos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:22:43 by gobarbos          #+#    #+#             */
-/*   Updated: 2023/03/23 15:59:30 by gobarbos         ###   ########.fr       */
+/*   Updated: 2023/04/17 10:31:28 by gobarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_exit_error(char *str){
-    ft_printf("Error\n%s\n", str);
-    exit(EXIT_FAILURE);
+void	ft_exit_error(char *str)
+{
+	ft_printf("Error\n%s\n", str);
+	exit(EXIT_FAILURE);
 }

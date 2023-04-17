@@ -6,7 +6,7 @@
 /*   By: gobarbos <gobarbos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 16:06:04 by gobarbos          #+#    #+#             */
-/*   Updated: 2023/03/27 11:23:40 by gobarbos         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:21:25 by gobarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int main(void){
         sa.sa_handler = &handler;
         sa.sa_flags = SA_SIGINFO;
         if (sigaction(SIGUSR1, &sa, NULL) == -1)
-            ft_exit_error("Couldn't chande SIGUSR1.");
+            ft_exit_error("Couldn't change SIGUSR1.");
         if (sigaction(SIGUSR2, &sa, NULL) == -1)
-            ft_exit_error("Couldn't chande SIGUSR2.");   
+            ft_exit_error("Couldn't change SIGUSR2.");   
     }
 }
