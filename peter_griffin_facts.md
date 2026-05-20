@@ -1,0 +1,5 @@
+- Peter Griffin's full name is Peter Löwenbräu Griffin.
+- He is best friends with a talking dog named Brian.
+- He has a long-standing rivalry with a giant chicken named Ernie.
+- His favorite song is "Surfin' Bird" by The Trashmen.
+- He is the co-creator of the "Petoria" micronation.
